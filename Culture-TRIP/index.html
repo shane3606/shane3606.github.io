@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="DESCRIPTION META TAG" />
+    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+    <meta
+      property="og:description"
+      content="SOCIAL MEDIA DESCRIPTION TAG TAG"
+    />
+    <meta property="og:url" content="URL OF THE WEBSITE" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/your_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG" />
+    <meta
+      name="twitter:description"
+      content="TWITTER BANNER DESCRIPTION META TAG"
+    />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta
+      name="twitter:image"
+      content="static/images/your_twitter_banner_image.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      Culture-TRIP: Culturally-Aware Text-to-Image Generation with Iterative
+      Prompt Refinement
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/bulma.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="static/css/index.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Culture-TRIP: Culturally-Aware Text-to-Image Generation with
+                Iterative Prompt Refinement
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <!-- Paper authors -->
+                <span class="author-block">
+                  <a
+                    href="https://sites.google.com/view/suchae-jeong"
+                    target="_blank"
+                    >Suchae Jeong,
+                  </a></span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://sites.google.com/view/youngsik-yun"
+                    target="_blank"
+                    >Inseong Choi,
+                  </a></span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://sites.google.com/view/youngsik-yun"
+                    target="_blank"
+                    >Youngsik Yun,
+                  </a></span
+                >
+                <span class="author-block">
+                  <a
+                    href="https://sites.google.com/view/jihiekim/"
+                    target="_blank"
+                    >Jihie Kim</a
+                  ></span
+                >
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  >Dongguk University<br /><b>Accepted to NAACL 2025</b></span
+                >
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/pdf/2402.05374.pdf"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <span class="link-block" style="margin-left: 20px">
+                    <a
+                      href="https://github.com/shane3606/CIC"
+                      target="_blank"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaser video-->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <img src="static/images/result.png" alt="MY ALT TEXT" />
+          <h2 class="content has-text-justified">
+            Qualitative comparison of C-TRIP ablated configurations compared to
+            Base Prompt. The six columns can be divided into two groups:
+            Relatively UC nouns (left four columns) and RC nouns (right two
+            columns). The left group needed C-TRIP to introduce culture nouns
+            that were new to them, while the right group had to recall what they
+            already knew through the additional information provided.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End teaser video -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Text-to-Image models, including Stable Diffusion, have
+                significantly improved in generating images that are highly
+                semantically aligned with the given prompts. However, existing
+                models may fail to produce appropriate images for the cultural
+                concepts or objects that are not well known or underrepresented
+                in western cultures, such as 'hangari' (Korean utensil). In this
+                paper, we propose a novel approach,
+                <b
+                  >Culturally-Aware Text-to-Image Generation with Iterative
+                  Prompt Refinement (Culture-TRIP)</b
+                >
+                , which refines the prompt in order to improve the alignment of
+                the image with such culture nouns in text-to-image models. Our
+                approach (1) retrieves cultural contexts and visual details
+                related to the culture nouns in the prompt and (2) iteratively
+                refines and evaluates the prompt based on a set of cultural
+                criteria and large language models. The refinement process
+                utilizes the information retrieved from Wikipedia and the Web.
+                Our user survey, conducted with 66 participants from eight
+                different countries demonstrates that our proposed approach
+                enhances the alignment between the images and the prompts. In
+                particular, C-TRIP demonstrates improved alignment between the
+                generated images and underrepresented culture nouns. Our code
+                and dataset will be made publicly available upon acceptance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <!-- algorithm -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div class="container is-max-desktop">
+            <br />
+            <h2 class="title">Framework</h2>
+            <h2 class="content has-text-justified">
+              C-TRIP Overview. First, retrieve
+              <b>cultural contexts (cultural background, purpose)</b> and
+              <b>visual details</b>
+              related to the culture nouns as described in Section 3.1. Then,
+              refining the prompt based on the obtained information. We
+              <b>iterative evaluate and refine the prompt</b> as described in
+              Section 3.2.
+            </h2>
+            <br />
+          </div>
+          <div class="container is-max-desktop">
+            <img src="static/images/framework.png" alt="MY ALT TEXT" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End algorithm-->
+
+    <!-- Image carousel -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container">
+          <div class="container is-max-desktop">
+            <br />
+            <h2 class="title">Culture-TRIP Results</h2>
+            <h2 class="content has-text-justified">
+              We present additional qualitative examples illustrating how the
+              C-TRIP approach improves the alignment of culture nouns in UC and
+              RC nouns with the generated images by Stable Diffusion 2. Results
+              are showcased across China, Germany, India, Japan, Pakistan, South
+              Korea, USA, and Vietnam. Additionally, our approach effectively
+              enhanced the alignment between prompt containing culture nouns
+              from the UC nouns and the generated images.
+            </h2>
+          </div>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/UC_RC1.png"
+                width="1280px"
+                height="720px"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+                Qualitative Sample for Chinese culture
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/UC_RC2.png"
+                width="1280px"
+                height="720px"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+                Qualitative Sample for German culture
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/UC_RC3.png"
+                width="1280px"
+                height="720px"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+                Qualitative Sample for Indian culture
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/UC_RC4.png"
+                width="1280px"
+                height="720px"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+                Qualitative Sample for Japanese culture
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/UC_RC5.png"
+                width="1280px"
+                height="720px"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+                Qualitative Sample for Pakistani culture
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/UC_RC6.png"
+                width="1280px"
+                height="720px"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+                Qualitative Sample for South Korean culture
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/UC_RC7.png"
+                width="1280px"
+                height="720px"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+                Qualitative Sample for American culture
+              </h2>
+            </div>
+            <div class="item">
+              <!-- Your image here -->
+              <img
+                src="static/images/UC_RC8.png"
+                width="1280px"
+                height="720px"
+                alt="MY ALT TEXT"
+              />
+              <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+                Qualitative Sample for Vietnamese culture
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End image carousel -->
+
+    <!--Ablation-->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div class="=container is-max-desktop">
+            <h2 class="title">Ablation Study</h2>
+            <h2 class="content has-text-justified">
+              Our approach performed the best with the Q1 group, with the
+              highest median score and a narrow IQR, presenting consistent
+              improvement across this group. This suggests that C-TRIP
+              effectively reinforces the generation of images for the Q1 group,
+              enhancing alignment for UC nouns. The Q2 group demonstrated the
+              highest upper range within the IQR and the second-highest median,
+              suggesting effective but slightly variable improvements. However,
+              the Q3 group showed the lowest performance with a wide variance,
+              which may potentially indicate that additional information could
+              decrease alignment for culture nouns.
+            </h2>
+            <br />
+          </div>
+          <figure class="has-text-centered">
+            <img
+              src="static/images/improvement_score.png"
+              width="512px"
+              height="512px"
+              alt="MY ALT TEXT"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!--End ablation-->
+
+    <!--limitation-->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container">
+          <div class="=container is-max-desktop">
+            <h2 class="title">Limitation</h2>
+            <h2 class="content has-text-justified">
+              Sources like Wikipedia and general Web content contain cultural
+              biases, which can affect the refinement process and C-TRIP's
+              capacity to provide balanced cultural representation. Future work
+              should focus on enhancing the information retrieval process
+              through developing culturally diverse datasets, thereby ensuring
+              high-quality, relevant data for effective prompt refinement. The
+              limited scope of prompts utilized in our experiments and human
+              evaluations presents a current limitation and suggests an
+              important avenue for future research. Additionally, our work is
+              constrained by the perceptual biases of human annotators from
+              eight countries. To improve the reliability of evaluation
+              outcomes, future work will emphasize the inclusion of annotators
+              from a broader range of cultural backgrounds.
+            </h2>
+            <br />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End limitation-->
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">Citation & BibTeX</h2>
+        <div class="container is-max-desktop">
+          Youngsik Yun, and Jihie Kim, "CIC: A framework for Culturally-aware
+          Image Captioning." International Joint Conference on Artificial
+          Intelligence (IJCAI) 2024.
+        </div>
+        <br />
+        <pre><code>"@article{yun2024cic,<br>&nbsp;&nbsp;&nbsp;&nbsp;title={CIC: A Framework for Culturally-Aware Image Captioning},<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Yun, Youngsik and Kim, Jihie},<br>&nbsp;&nbsp;&nbsp;&nbsp;journal={arXiv preprint arXiv:2402.05374},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2024}<br>}</code></pre>
+        <pre><code>"@inproceedings{ijcai2024p180,<br>&nbsp;&nbsp;&nbsp;&nbsp;title={CIC: A Framework for CUlturally-Aware Image Captioning},<br>&nbsp;&nbsp;&nbsp;&nbsp;author={Yun, Youngsik and Kim, Jihie},<br>&nbsp;&nbsp;&nbsp;&nbsp;booktitle={Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence, {IJCAI-24}}<br>&nbsp;&nbsp;&nbsp;&nbsp;publisher={International Joint Conferences on Artificial Intelligence Organization},<br>&nbsp;&nbsp;&nbsp;&nbsp;editor={Kate Larson},<br>&nbsp;&nbsp;&nbsp;&nbsp;pages={1625--1633},<br>&nbsp;&nbsp;&nbsp;&nbsp;year={2024},<br>&nbsp;&nbsp;&nbsp;&nbsp;month={8},<br>&nbsp;&nbsp;&nbsp;&nbsp;note={Main Track},<br>&nbsp;&nbsp;&nbsp;&nbsp;doi={10.24963/ijcai.2024/180},<br>&nbsp;&nbsp;&nbsp;&nbsp;url={https://doi.org/10.24963/ijcai.2024/180},<br>} </code></pre>
+      </div>
+    </section>
+    <!--End BibTex citation -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <h2 class="title">Acknowledgements</h2>
+              <p>
+                This research was supported by the MSIT(Ministry of Science and
+                ICT), Korea, under the ITRC(Information Technology Research
+                Center) support program(IITP-2024-2020-0-01789), and the
+                Artificial Intelligence Convergence Innovation Human Resources
+                Development (IITP-2024-RS-2023-00254592) supervised by the
+                IITP(Institute for Information & Communications Technology
+                Planning & Evaluation).
+              </p>
+              <p>
+                This page was built using the
+                <a
+                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank"
+                  >Academic Project Page Template</a
+                >
+                which was adopted from the <a
+                  href="https://nerfies.github.io"
+                  target="_blank"
+                  >Nerfies</a
+                > project page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+  </body>
+</html>
